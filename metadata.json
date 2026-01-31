@@ -1,0 +1,5 @@
+{
+  "name": "Void Terminal: NetRunner",
+  "description": "A browser-based Linux terminal simulator game powered by Gemini. Explore a simulated file system, hack into secure directories, and uncover the mystery within a cyberpunk interface.",
+  "requestFramePermissions": []
+}

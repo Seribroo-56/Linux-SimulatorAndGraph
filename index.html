@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Void Terminal: NetRunner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+      /* Learn Git Branching Inspired Theme */
+      body {
+        background-color: #A0C6D7; /* Soft light blue */
+        font-family: 'Fira Code', monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #293134; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a5a60; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5e7279; 
+      }
+
+      /* Window Styles */
+      .window-frame {
+        width: 90%;
+        max-width: 1200px;
+        height: 85vh;
+        background: #293134;
+        border-radius: 10px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #1a2123;
+      }
+
+      .title-bar {
+        background: linear-gradient(to bottom, #E8E8E8, #D0D0D0);
+        height: 32px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        border-bottom: 1px solid #aaa;
+        position: relative;
+      }
+
+      .window-controls {
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot.red { background-color: #ff5f56; border: 1px solid #e0443e; }
+      .dot.yellow { background-color: #ffbd2e; border: 1px solid #dea123; }
+      .dot.green { background-color: #27c93f; border: 1px solid #1aab29; }
+
+      .window-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #444;
+        pointer-events: none;
+      }
+
+      .status-bar {
+        background-color: #87D441;
+        padding: 8px 15px;
+        color: #000;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #6cb030;
+      }
+
+      .instructions-btn {
+        background: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.2);
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+      .instructions-btn:hover {
+        background: rgba(0,0,0,0.2);
+      }
+
+      .terminal-body {
+        flex: 1;
+        position: relative;
+        background-color: #293134;
+        display: flex;
+        overflow: hidden;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700&display=swap');
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "xterm": "https://esm.sh/xterm@^5.3.0",
+    "xterm-addon-fit": "https://esm.sh/xterm-addon-fit@^0.8.0",
+    "minimist": "https://esm.sh/minimist@^1.2.8"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root" class="w-full h-full flex items-center justify-center"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
